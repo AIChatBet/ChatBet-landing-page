@@ -15,6 +15,8 @@ import { countries } from '../../../model/contry-data.store';
 export class MainPageComponent {
   public countries:any = countries
   public dialCode: string | null = null;
+  public maxLength: number = 0;
+  public minLength: number = 0;
 
  
     @ViewChild('videoElement') videoElement!: ElementRef<HTMLVideoElement>;
@@ -94,41 +96,7 @@ export class MainPageComponent {
       private fb: FormBuilder, 
       private toastr: ToastrService
     ) {}
-  
-/*     ngOnInit() {
-      setTimeout(() => {
-        this.changeAnimation(); 
-      }, 2800);
-    } */
-  
-    nextParagraph() {
-      if (this.currentIndex < 3) {
-        this.currentIndex++;
-        console.log('Next paragraph:', this.currentIndex);
-      }
-    }
-  
-    prevParagraph() {
-      if (this.currentIndex > 0) {
-        this.currentIndex--;
-        console.log('Previous paragraph:', this.currentIndex);
-      }
-    }
-  
-    nextParagraptwo() {
-      if (this.currentIndextwo < 3) {
-        this.currentIndextwo++;
-        console.log('Next paragraph:', this.currentIndextwo);
-      }
-    }
-  
-    prevParagraphtwo() {
-      if (this.currentIndextwo > 0) {
-        this.currentIndextwo--;
-        console.log('Previous paragraph:', this.currentIndextwo);
-      }
-    }
-  
+
     switchLanguage(language: string) {
       this.translate.use(language);
       this.currentLanguage = language;
@@ -154,14 +122,42 @@ export class MainPageComponent {
     onCountrySelected(country: any) {
       console.log('Selected Country:', country);
       this.dialCode = country.dialCode;
+      this.maxLength = country.maxLength;
+      this.minLength = country.minLength;
+    
+    const contactControl = this.form.get('contact');
+
+    if(contactControl) {
+      contactControl.clearValidators();
+
+      contactControl.setValidators([
+        Validators.required,
+        Validators.minLength(country.minLength),
+        Validators.maxLength(country.maxLength)
+      ]);
+
+      contactControl.updateValueAndValidity();
+    }
+    
+    console.log('Max Length:', country.maxLength, 'Min Length:', country.minLength);
+
     }
 
     async send() {
-      if (this.form.invalid || !this.dialCode) {
+      if (this.form.invalid || !this.dialCode ) {
         if (this.currentLanguage === 'es') {
           this.toastr.error('Por favor, complete todos los campos antes de enviar');
         } else {
           this.toastr.error('Please fill in all fields before submitting');
+        }
+        return;
+      }
+
+      if (this.form.value.contact.length < this.minLength || this.form.value.contact.length > this.maxLength) {
+        if (this.currentLanguage === 'es') {
+          this.toastr.error('Por favor, introduzca un número de contacto válido');
+        } else {
+          this.toastr.error('Please enter a valid contact number');
         }
         return;
       }
@@ -224,13 +220,6 @@ export class MainPageComponent {
       });
     }
 
-  /*   changeAnimation() {
-      this.options = {
-        path: '../../../../assets/animation/Idle.json' 
-      };
-    
-    }
-   */
     playVideoMobile() {
       const gifImageMobile = document.getElementById('gifImageMobile');
       const video: HTMLVideoElement = this.videoElementMobile.nativeElement;

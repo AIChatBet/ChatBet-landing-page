@@ -5,4 +5,6 @@ export interface Countries {
   number?:string;
   dialCode?:string;
   flag?:string;
+  minLength?:number;
+  maxLength?:number;
 }
