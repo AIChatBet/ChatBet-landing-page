@@ -1,4 +1,24 @@
 {
+ "GGR_LESS_250K": "<$250K",
+  "GGR_250K_1M": ">$250K – <$1M",
+  "GGR_1M_5M": ">$1M – $5M",   
+  "GGR_5M_10M": "$5M – $10M", 
+  "GGR_MORE_10M": "$10M+",
+  
+  "REGION_AFRICA": "África",
+  "REGION_ASIA": "Asia",
+  "REGION_EUROPE": "Europa",
+  "REGION_LATAM": "Latam",
+  "REGION_NORTH_AMERICA": "América del Norte",
+  "REGION_OTHER": "Otros",
+  
+  "INTEREST_OPERATOR": "Soy un operador interesado en usar ChatBet",
+  "INTEREST_PLATFORM": "Soy un proveedor de plataforma interesado en integrar ChatBet",
+  "INTEREST_SELL": "Me gustaría ayudar a vender o distribuir ChatBet",
+  "INTEREST_VENDOR": "Soy un proveedor o socio que ofrece un servicio",
+  "INTEREST_JOB": "Me gustaría postularme para un trabajo o una pasantía",
+  "INTEREST_OTHER": "Otro (por favor, especifique abajo)",
+
   "header": {
     "logoAlt": "ChatBet Logo",
     "languageSwitch": {
@@ -359,7 +379,10 @@
       "select": "Selecciona",
       "thanksmessage": "Gracias por contactarnos. Estamos construyendo algo poderoso y trabajamos con una lista curada de socios. Si tu perfil se alinea con nuestras prioridades actuales, alguien de nuestro equipo se pondrá en contacto contigo pronto.",
       "error": "Unicamente se permiten correos corporativos",
-      "submit": "Enviar info"
+      "submit": "Enviar info",
+      "interestLabel": "Soy un operador interesado en usar ChatBet",
+      "specify": "Por favor, especifique aquí",
+      "regionLabel": "Región de operación"
     }
   },
 

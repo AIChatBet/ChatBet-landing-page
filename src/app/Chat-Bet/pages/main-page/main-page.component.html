@@ -1,5 +1,5 @@
 <div class="section">
-
+<!-- Prueba -->
   <div class="background">
     <!-- <img src="./assets/Background/nuevoheader.png" alt="" /> -->
   </div>
@@ -653,76 +653,132 @@
     </div>
 
     <div class="form" [formGroup]="form">
-      <form action="javascript:void(0)" (submit)="send()">
-        <div class="form-input">
-          <div class="form-section">
-            <input formControlName="name" type="text" [placeholder]="'contactUs.form.name' | translate" />
-          </div>
-          <div class="form-section">
-            <input formControlName="email" type="text" [placeholder]="'contactUs.form.email' | translate" />
-          </div>
-          <div *ngIf="form.get('email')?.hasError('forbiddenDomain') && form.get('email')?.touched" style="color: red; font-size: 0.9em;">
-            {{ 'contactUs.form.error' | translate }}
-          </div>
-           <div class="form-section">
-            <input formControlName="empresa" type="text" [placeholder]="'contactUs.form.company' | translate" />
-          </div>
-          <div class="form-section">
-            <!-- <div class="countries">
-              <div class="num-selector">
-                <app-custom-select
-                  [countries]="countries"
-                  (countrySelected)="onCountrySelected($event)"
-                ></app-custom-select>
-              </div>
-              <input formControlName="contact" type="text" [placeholder]="'contactUs.form.contactNumber' | translate" />
-            </div> -->
+  <form action="javascript:void(0)" (submit)="send()">
+    <div class="form-input">
+      <div class="form-section">
+        <input
+          formControlName="name"
+          type="text"
+          [placeholder]="'contactUs.form.name' | translate"
+        />
+      </div>
+      <div class="form-section">
+        <input
+          formControlName="email"
+          type="text"
+          [placeholder]="'contactUs.form.email' | translate"
+        />
+      </div>
+      <div
+        *ngIf="form.get('email')?.hasError('forbiddenDomain') && form.get('email')?.touched"
+        style="color: red; font-size: 0.9em"
+      >
+        {{ 'contactUs.form.error' | translate }}
+      </div>
+      <div class="form-section">
+        <input
+          formControlName="empresa"
+          type="text"
+          [placeholder]="'contactUs.form.company' | translate"
+        />
+      </div>
 
+      <div class="form-section">
         <div class="countries">
-            <input
-              type="text"
-              [value]="form.value.monthlyGgr"
-              readonly
-              placeholder="{{ 'contactUs.form.monthlyGgr' | translate }}"
-            
+          <input
+            type="text"
+            [value]="form.value.monthlyGgr"
+            readonly
+            placeholder="{{ 'contactUs.form.monthlyGgr' | translate }}"
           />
           <select formControlName="monthlyGgr">
             <option value="" disabled selected>
-      {{ 'contactUs.form.select' | translate }}
-    </option>
-          <option *ngFor="let option of monthlyGgrOptions" [value]="option">
-            {{ option }}
-          </option>
+              {{ 'contactUs.form.select' | translate }}
+            </option>
+            <option
+              *ngFor="let option of monthlyGgrOptions"
+              [value]="option"
+            >
+              {{ option }}
+            </option>
           </select>
-          </div>
-       
-          </div>
-          
-         
         </div>
-        
-        
+      </div>
 
-
-        <div class="form-send">
-          <input formControlName="message" type="text" [placeholder]="'contactUs.form.message' | translate" />
-          <br>
-
-          <div class="leyenda">
-            <br>
-          <small>
-            {{ 'contactUs.leyenda' | translate }}
-          </small>
+      <div class="form-section">
+        <div class="countries">
+          <input
+            type="text"
+            [value]="form.value.interest"
+            readonly
+            placeholder="{{ 'contactUs.form.interestLabel' | translate }}"
+          />
+          <select formControlName="interest">
+            <option value="" disabled selected>
+              {{ 'contactUs.form.select' | translate }}
+            </option>
+            <option *ngFor="let option of interestOptions" [value]="option">
+              {{ option }}
+            </option>
+          </select>
         </div>
-        
-          <h3>
-        <span class="TitleBoldMobile">{{ 'contactUs.form.thanksmessage' | translate }}</span>
+      </div>
+
+      <div
+        *ngIf="form.get('interest')?.value === 'Other (please specify below)'"
+        class="form-section"
+      >
+        <input
+          type="text"
+          formControlName="interestOther"
+          [placeholder]="'contactUs.form.specify' | translate"
+        />
+      </div>
+
+      <div class="form-section">
+        <div class="countries">
+          <input
+            type="text"
+            [value]="form.value.region"
+            readonly
+            placeholder="{{ 'contactUs.form.regionLabel' | translate }}"
+          />
+          <select formControlName="region">
+            <option value="" disabled selected>
+              {{ 'contactUs.form.select' | translate }}
+            </option>
+            <option *ngFor="let region of regionOptions" [value]="region">
+              {{ region }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-send">
+      <input
+        formControlName="message"
+        type="text"
+        [placeholder]="'contactUs.form.message' | translate"
+      />
+      <br />
+
+      <div class="leyenda">
+        <br />
+        <small>{{ 'contactUs.leyenda' | translate }}</small>
+      </div>
+
+      <h3>
+        <span class="TitleBoldMobile">
+          {{ 'contactUs.form.thanksmessage' | translate }}
+        </span>
       </h3>
 
-          <button type="submit">{{ 'contactUs.form.submit' | translate }}</button>
-        </div>
-      </form>
+      <button type="submit">{{ 'contactUs.form.submit' | translate }}</button>
     </div>
+  </form>
+</div>
+
   </div>
 </div>
 

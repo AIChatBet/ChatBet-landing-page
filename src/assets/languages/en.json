@@ -1,4 +1,24 @@
 {
+      "GGR_LESS_250K": "<$250K",
+      "GGR_250K_1M": ">$250K – <$1M",
+      "GGR_1M_5M": ">$1M – $5M",   
+      "GGR_5M_10M": "$5M – $10M", 
+      "GGR_MORE_10M": "$10M+",
+      
+      "REGION_AFRICA": "Africa",
+      "REGION_ASIA": "Asia",
+      "REGION_EUROPE": "Europe",
+      "REGION_LATAM": "Latam",
+      "REGION_NORTH_AMERICA": "North America",
+      "REGION_OTHER": "Other",
+      
+      "INTEREST_OPERATOR": "I’m an operator interested in using ChatBet",
+      "INTEREST_PLATFORM": "I’m a platform provider interested in integrating ChatBet",
+      "INTEREST_SELL": "I’d like to help sell or distribute ChatBet",
+      "INTEREST_VENDOR": "I’m a vendor or partner offering a service",
+      "INTEREST_JOB": "I’d like to apply for a job or internship",
+      "INTEREST_OTHER": "Other (please specify below)",
+
         "header": {
           "logoAlt": "ChatBet Logo",
           "languageSwitch": {
@@ -350,17 +370,19 @@
           "subtitle": "Experience the thrill! Schedule a demo today and see how ChatBet's AI revolutionizes the user experience.",
           "leyenda":"(*) Required fields",
           "form": {
-            "name": "Full Name (*)",
-            "monthlyGgr": "Monthly GGR (USD)?",
-            "contactNumber": "Contact Number",
-            "email": "Business Mail(*)",
-            "company": "Company Name (*)",
-            "message": "Any additional comments? (Optional)",
-            "select": "Select",
-            "thanksmessage": "Thanks for reaching out. We're building something powerful, and working with a curated list of partners. If your profile aligns with our current priorities, someone from our team will be in touch shortly.",
-            "error": "We only accept corporate emails.",
-            "submit": "Send Info"
-          }
+              "name": "Full Name (*)",
+              "email": "Email Address (*)",
+              "company": "Company (*)",
+              "monthlyGgr": "Monthly GGR (USD)",
+              "message": "Message",
+              "submit": "Send Message",
+              "select": "Select one option",
+              "error": "Please enter a valid email",
+              "thanksmessage": "Thank you for contacting us!",
+              "interestLabel": "I’m an Operator Interested in Using ChatBet",
+              "specify": "Please specify here",
+              "regionLabel": "Region of Operation"
+            }
         },
 
           "aboutUs": {
