@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
 
+## Run with Docker
+
+Run `./run.sh` to build and start the container using Docker Compose. The app will be available at `http://localhost:4200/`.
+
+You can also run `docker compose up --build` directly if you prefer.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
