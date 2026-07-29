@@ -670,7 +670,7 @@
         />
       </div>
       <div
-        *ngIf="form.get('email')?.hasError('forbiddenDomain') && form.get('email')?.touched"
+        *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
         style="color: red; font-size: 0.9em"
       >
         {{ 'contactUs.form.error' | translate }}
