@@ -377,7 +377,7 @@
               "message": "Message",
               "submit": "Send Message",
               "select": "Select one option",
-              "error": "Please enter a valid email",
+              "error": "Please enter a valid corporate email",
               "thanksmessage": "Thank you for contacting us!",
               "interestLabel": "I’m an Operator Interested in Using ChatBet",
               "specify": "Please specify here",
