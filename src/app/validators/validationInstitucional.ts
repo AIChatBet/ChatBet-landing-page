@@ -19,14 +19,20 @@ export function validationInstitucional(
     }
 
     const domain = emailParts[1];
+
+    // 1. Formato: el dominio debe tener un TLD real (al menos un punto y 2+ letras después), sin importar cuál (.com, .io, .gg, etc.)
+    if (!/^[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}$/.test(domain)) {
+      return { invalidFormat: true };
+    }
+
     const domainRoot = domain.split('.')[0];
 
-    // 1. Filtrar dominios de correo gratuito, incluyendo typos/variantes de TLD (Blacklist)
+    // 2. Filtrar dominios de correo gratuito, incluyendo typos/variantes de TLD (Blacklist)
     if (blacklistedDomains.includes(domain) || blacklistedRoots.includes(domainRoot)) {
       return { forbiddenDomain: true };
     }
 
-    // 2. Condición restrictiva: Solo permitir terminación .com
+    // 3. Condición restrictiva: Solo permitir terminación .com
     if (strictDotCom && !domain.endsWith('.com')) {
       return { forbiddenDomain: true }; 
     }
