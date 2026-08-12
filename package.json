@@ -24,6 +24,7 @@
     "@lottiefiles/lottie-player": "^2.0.12",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "intl-tel-input": "^29.2.2",
     "jquery": "^3.7.1",
     "keen-slider": "^6.8.6",
     "lottie-web": "^5.12.2",

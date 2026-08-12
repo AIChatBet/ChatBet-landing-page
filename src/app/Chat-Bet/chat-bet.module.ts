@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LottieComponent, provideLottieOptions } from 'ngx-lottie';
 import player from 'lottie-web';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { CustomSelectComponent } from './custom-select/custom-select.component';
+import { PhoneInputComponent } from './phone-input/phone-input.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { SpotlightComponent } from './pages/spotlight/spotlight.component';
 import { ChatBetRoutingModule } from './chat-bet-routing.module';
@@ -20,7 +20,7 @@ export function playerFactory() {
 @NgModule({
   declarations: [
     MainPageComponent,
-    CustomSelectComponent,
+    PhoneInputComponent,
     AboutusComponent,
     SpotlightComponent,
   ],
