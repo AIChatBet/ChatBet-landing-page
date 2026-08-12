@@ -684,6 +684,19 @@
       </div>
 
       <div class="form-section">
+        <app-phone-input
+          formControlName="phone"
+          [placeholder]="'contactUs.form.contactNumber' | translate"
+        ></app-phone-input>
+      </div>
+      <div
+        *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched"
+        style="color: red; font-size: 0.9em"
+      >
+        {{ 'contactUs.form.phoneError' | translate }}
+      </div>
+
+      <div class="form-section">
         <div class="countries">
           <input
             type="text"

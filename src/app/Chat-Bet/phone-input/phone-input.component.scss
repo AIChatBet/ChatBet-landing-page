@@ -1,0 +1,20 @@
+﻿:host {
+  display: block;
+  width: 100%;
+
+  ::ng-deep .iti {
+    width: 100%;
+  }
+
+  .num-selector {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-bottom: solid 1px;
+    border-color: #E4EBEE;
+    background-color: transparent;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 15px;
+  }
+}

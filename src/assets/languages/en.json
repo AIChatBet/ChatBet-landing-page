@@ -371,6 +371,7 @@
           "leyenda":"(*) Required fields",
           "form": {
               "name": "Full Name (*)",
+              "contactNumber": "Phone (*)",
               "email": "Email Address (*)",
               "company": "Company (*)",
               "monthlyGgr": "Monthly GGR (USD)",
@@ -378,6 +379,7 @@
               "submit": "Send Message",
               "select": "Select one option",
               "error": "Please enter a valid corporate email",
+              "phoneError": "Please enter a valid phone number",
               "thanksmessage": "Thank you for contacting us!",
               "interestLabel": "I’m an Operator Interested in Using ChatBet",
               "specify": "Please specify here",

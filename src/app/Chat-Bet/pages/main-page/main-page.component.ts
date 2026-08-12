@@ -4,7 +4,6 @@ import { TranslateService } from '@ngx-translate/core';
 import emailjs from '@emailjs/browser';
 import { ToastrService } from 'ngx-toastr';
 import { AnimationOptions } from 'ngx-lottie';
-import { countries } from '../../../model/contry-data.store';
 import { LanguageService } from '../../../lenguage/language.service';
 import { validationInstitucional } from '../../../validators/validationInstitucional';
 
@@ -26,10 +25,6 @@ interface GalleryModel {
   styleUrl: './main-page.component.scss',
 })
 export class MainPageComponent {
-  public countries: any = countries;
-  public dialCode: string | null = null;
-  public maxLength: number = 0;
-  public minLength: number = 0;
   public operatorsType: 'operators' | 'players' = 'operators';
   public NewOperatorsType: 'operators' | 'players' = 'operators';
   public gallerySlider: Array<BestGradesSlider> = [];
@@ -77,6 +72,7 @@ export class MainPageComponent {
     interestOther: [''],
     region: ['', Validators.required],
     message: ['', Validators.required],
+    phone: ['', Validators.required],
   });
 
   imagePaths: { [key: string]: { [key: string]: string } } = {
@@ -261,31 +257,6 @@ export class MainPageComponent {
     }
   }
 
-  onCountrySelected(country: any) {
-    if (!country) {
-      console.error('No country selected');
-      return;
-    }
-    
-    console.log('Selected Country:', country);
-    this.dialCode = country.dialCode;
-    this.maxLength = country.maxLength;
-    this.minLength = country.minLength;
-  
-    const contactControl = this.form.get('contact');
-    if(contactControl) {
-      contactControl.clearValidators();
-      contactControl.setValidators([
-        Validators.required,
-        Validators.minLength(country.minLength),
-        Validators.maxLength(country.maxLength)
-      ]);
-      contactControl.updateValueAndValidity();
-    }
-    
-    console.log('Max Length:', country.maxLength, 'Min Length:', country.minLength);
-  }
-
   async send() {
     this.form.markAllAsTouched();
 
@@ -304,6 +275,7 @@ export class MainPageComponent {
       await emailjs.send("service_18pzode", "template_worpfzp", {
         from_name: this.form.value.name,
         from_email: this.form.value.email,
+        from_phone: this.form.value.phone,
         from_contact: monthlyGgrValue,
         from_empresa: this.form.value.empresa,
         interest: this.form.value.interest,
